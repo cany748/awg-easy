@@ -39,7 +39,7 @@ async function getPrometheusResponse() {
   const id = `interface="${wgInterface.name}"`;
 
   const returnText = [
-    '# HELP wg-easy and wireguard metrics',
+    '# HELP awg-easy and amnezia wireguard metrics',
     '',
     '# HELP wireguard_configured_peers',
     '# TYPE wireguard_configured_peers gauge',

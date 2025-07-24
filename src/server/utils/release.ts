@@ -6,7 +6,7 @@ type GithubRelease = {
 async function fetchLatestRelease() {
   try {
     const response = await $fetch<GithubRelease>(
-      'https://api.github.com/repos/wg-easy/wg-easy/releases/latest',
+      'https://api.github.com/repos/cany748/awg-easy/releases/latest',
       { method: 'get', timeout: 5000 }
     );
     if (!response) {

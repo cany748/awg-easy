@@ -52,6 +52,6 @@ useHead({
       content: 'black-translucent',
     },
   ],
-  title: 'WireGuard',
+  title: 'AmneziaWG',
 });
 </script>
