@@ -1,11 +1,25 @@
-# WireGuard Easy
+# AmneziaWG Easy
 
-[![Build & Publish latest Image](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml)
-[![Lint](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml)
-[![GitHub Stars](https://img.shields.io/github/stars/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/stargazers)
-[![License](https://img.shields.io/github/license/wg-easy/wg-easy)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/releases/latest)
-[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy)
+---
+
+> [!IMPORTANT]
+>
+> The container does not use the Go implementation! It is mandatory to install the AmneziaWG kernel module on the host system.
+>
+> Instructions for installing the module: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+
+> [!IMPORTANT]
+>
+> Контейнер не использует реализацию на Go! Для работы обязательно требуется установить модуль ядра AmneziaWG на хост-систему.
+>
+> Инструкция по установке модуля: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+
+[![Build & Publish latest Image](https://github.com/cany748/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/cany748/awg-easy/actions/workflows/deploy.yml)
+[![Lint](https://github.com/cany748/awg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/cany748/awg-easy/actions/workflows/lint.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/cany748/awg-easy)](https://github.com/cany748/awg-easy/stargazers)
+[![License](https://img.shields.io/github/license/cany748/awg-easy)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/cany748/awg-easy)](https://github.com/cany748/awg-easy/releases/latest)
+[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/cany748/awg-easy/pkgs/container/wg-easy)
 
 You have found the easiest way to install & manage WireGuard on any Linux host!
 

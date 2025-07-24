@@ -59,6 +59,15 @@ PrivateKey = ${wgInterface.privateKey}
 Address = ${address}
 ListenPort = ${wgInterface.port}
 MTU = ${wgInterface.mtu}
+Jc = ${wgInterface.jC}
+Jmin = ${wgInterface.jMin}
+Jmax = ${wgInterface.jMax}
+S1 = ${wgInterface.s1}
+S2 = ${wgInterface.s2}
+H1 = ${wgInterface.h1}
+H2 = ${wgInterface.h2}
+H3 = ${wgInterface.h3}
+H4 = ${wgInterface.h4}
 PreUp = ${iptablesTemplate(hooks.preUp, wgInterface)}
 PostUp = ${iptablesTemplate(hooks.postUp, wgInterface)}
 PreDown = ${iptablesTemplate(hooks.preDown, wgInterface)}
@@ -92,6 +101,15 @@ PrivateKey = ${client.privateKey}
 Address = ${address}
 DNS = ${(client.dns ?? userConfig.defaultDns).join(', ')}
 MTU = ${client.mtu}
+Jc = ${wgInterface.jC}
+Jmin = ${wgInterface.jMin}
+Jmax = ${wgInterface.jMax}
+S1 = ${wgInterface.s1}
+S2 = ${wgInterface.s2}
+H1 = ${wgInterface.h1}
+H2 = ${wgInterface.h2}
+H3 = ${wgInterface.h3}
+H4 = ${wgInterface.h4}
 ${hookLines.length ? `${hookLines.join('\n')}\n` : ''}
 [Peer]
 PublicKey = ${wgInterface.publicKey}
@@ -102,37 +120,37 @@ Endpoint = ${userConfig.host}:${userConfig.port}`;
   },
 
   generatePrivateKey: () => {
-    return exec('wg genkey');
+    return exec('awg genkey');
   },
 
   getPublicKey: (privateKey: string) => {
-    return exec(`echo ${privateKey} | wg pubkey`, {
-      log: 'echo ***hidden*** | wg pubkey',
+    return exec(`echo ${privateKey} | awg pubkey`, {
+      log: 'echo ***hidden*** | awg pubkey',
     });
   },
 
   generatePreSharedKey: () => {
-    return exec('wg genpsk');
+    return exec('awg genpsk');
   },
 
   up: (infName: string) => {
-    return exec(`wg-quick up ${infName}`);
+    return exec(`awg-quick up ${infName}`);
   },
 
   down: (infName: string) => {
-    return exec(`wg-quick down ${infName}`);
+    return exec(`awg-quick down ${infName}`);
   },
 
   restart: (infName: string) => {
-    return exec(`wg-quick down ${infName}; wg-quick up ${infName}`);
+    return exec(`awg-quick down ${infName}; awg-quick up ${infName}`);
   },
 
   sync: (infName: string) => {
-    return exec(`wg syncconf ${infName} <(wg-quick strip ${infName})`);
+    return exec(`awg syncconf ${infName} <(awg-quick strip ${infName})`);
   },
 
   dump: async (infName: string) => {
-    const rawDump = await exec(`wg show ${infName} dump`, {
+    const rawDump = await exec(`awg show ${infName} dump`, {
       log: false,
     });
 
