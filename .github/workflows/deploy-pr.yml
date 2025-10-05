@@ -12,7 +12,7 @@ jobs:
   docker:
     name: Build Docker
     runs-on: ${{ matrix.arch.os }}
-    if: github.repository_owner == 'wg-easy'
+    if: github.repository_owner == 'evoll'
     strategy:
       fail-fast: false
       matrix:
@@ -24,7 +24,7 @@ jobs:
           - platform: linux/arm/v7
             os: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Prepare
         run: |
@@ -50,6 +50,6 @@ jobs:
           context: .
           push: false
           platforms: ${{ matrix.arch.platform }}
-          tags: ghcr.io/wg-easy/wg-easy:pr
+          tags: ghcr.io/evoll/awg-easy:pr
           cache-from: type=gha
           cache-to: type=gha,mode=min,scope=build-${{ env.PLATFORM_PAIR }}

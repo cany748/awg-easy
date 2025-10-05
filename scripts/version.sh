@@ -50,5 +50,5 @@ git tag -a "v$new_version" -m "Release version $new_version"
 echo "Created Git tag v$new_version"
 
 # Push the commit & tag to the remote repository
-git push origin master --follow-tags
+git push origin main --follow-tags
 echo "Pushed Git commit and tag v$new_version to remote repository"

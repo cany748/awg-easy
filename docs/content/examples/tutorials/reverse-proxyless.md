@@ -24,6 +24,6 @@ If you only allow access to the web UI from your local network, you can skip the
         - INSECURE=true
     ```
 
-- Save the file and restart `wg-easy`.
+- Save the file and restart `awg-easy`.
 
 - Make sure that the Web UI is not accessible from outside your local network.

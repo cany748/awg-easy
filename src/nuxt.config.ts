@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     experimental: {
       localeDetector: './localeDetector.ts',
     },
+    // https://evoll.github.io/awg-easy/latest/contributing/translation/
     locales: [
       {
         // same as i18n.config.ts
@@ -35,9 +36,19 @@ export default defineNuxtConfig({
         name: 'English',
       },
       {
-        code: 'uk',
-        language: 'uk-UA',
-        name: 'Українська',
+        code: 'de',
+        language: 'de-DE',
+        name: 'Deutsch',
+      },
+      {
+        code: 'es',
+        language: 'es-ES',
+        name: 'Español',
+      },
+      {
+        code: 'it',
+        language: 'it-IT',
+        name: 'Italiano',
       },
       {
         code: 'fr',
@@ -45,9 +56,9 @@ export default defineNuxtConfig({
         name: 'Français',
       },
       {
-        code: 'de',
-        language: 'de-DE',
-        name: 'Deutsch',
+        code: 'ko',
+        language: 'ko-KR',
+        name: '한국어',
       },
       {
         code: 'ru',
@@ -55,9 +66,9 @@ export default defineNuxtConfig({
         name: 'Русский',
       },
       {
-        code: 'zh-HK',
-        language: 'zh-HK',
-        name: '繁體中文（香港）',
+        code: 'uk',
+        language: 'uk-UA',
+        name: 'Українська',
       },
       {
         code: 'zh-CN',
@@ -65,9 +76,34 @@ export default defineNuxtConfig({
         name: '简体中文',
       },
       {
-        code: 'ko',
-        language: 'ko-KR',
-        name: '한국어',
+        code: 'zh-HK',
+        language: 'zh-HK',
+        name: '繁體中文（香港）',
+      },
+      {
+        code: 'pl',
+        language: 'pl-PL',
+        name: 'Polski',
+      },
+      {
+        code: 'pt-BR',
+        language: 'pt-BR',
+        name: 'Português (Brasil)',
+      },
+      {
+        code: 'tr',
+        language: 'tr-TR',
+        name: 'Türkçe',
+      },
+      {
+        code: 'bn',
+        language: 'bn-BD',
+        name: 'বাংলা',
+      },
+      {
+        code: 'id',
+        language: 'id-ID',
+        name: 'Bahasa Indonesia',
       },
     ],
     defaultLocale: 'en',
@@ -84,11 +120,12 @@ export default defineNuxtConfig({
     esbuild: {
       options: {
         // to support big int
-        target: 'es2020',
+        target: 'node20',
       },
     },
     alias: {
       '#db': fileURLToPath(new URL('./server/database/', import.meta.url)),
+      '#utils': fileURLToPath(new URL('./server/utils/', import.meta.url)),
     },
     externals: {
       traceInclude: [fileURLToPath(new URL('./cli/index.ts', import.meta.url))],
@@ -97,5 +134,6 @@ export default defineNuxtConfig({
   alias: {
     // for typecheck reasons (https://github.com/nuxt/cli/issues/323)
     '#db': fileURLToPath(new URL('./server/database/', import.meta.url)),
+    '#utils': fileURLToPath(new URL('./server/utils/', import.meta.url)),
   },
 });

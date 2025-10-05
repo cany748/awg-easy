@@ -14,7 +14,7 @@ jobs:
     name: Build Docker
     runs-on: ${{ matrix.arch.os }}
     if: |
-      github.repository_owner == 'cany748' &&
+      github.repository_owner == 'evoll' &&
       startsWith(github.ref, 'refs/tags/v')
     permissions:
       packages: write
@@ -29,7 +29,7 @@ jobs:
           - platform: linux/arm/v7
             os: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Prepare
         run: |
@@ -41,7 +41,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/cany748/awg-easy
+            ghcr.io/evoll/awg-easy
           flavor: |
             latest=false
 
@@ -65,7 +65,7 @@ jobs:
           context: .
           platforms: ${{ matrix.arch.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ghcr.io/cany748/awg-easy
+          tags: ghcr.io/evoll/awg-easy
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
           cache-from: type=gha,scope=build-${{ env.PLATFORM_PAIR }}
           cache-to: type=gha,mode=min,scope=build-${{ env.PLATFORM_PAIR }}
@@ -88,14 +88,14 @@ jobs:
     name: Merge & Deploy Docker
     runs-on: ubuntu-latest
     if: |
-      github.repository_owner == 'cany748' &&
+      github.repository_owner == 'evoll' &&
       startsWith(github.ref, 'refs/tags/v')
     permissions:
       packages: write
     needs: docker-build
     steps:
       - name: Download digests
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: ${{ runner.temp }}/digests
           pattern: digests-*
@@ -108,6 +108,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Login to Codeberg
+        uses: docker/login-action@v3
+        with:
+          registry: codeberg.org
+          username: ${{ secrets.CODEBERG_USER }}
+          password: ${{ secrets.CODEBERG_PASS }}
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -116,7 +123,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/cany748/awg-easy
+            ghcr.io/evoll/awg-easy
+            codeberg.org/evoll/awg-easy
           flavor: |
             latest=false
           tags: |
@@ -128,26 +136,26 @@ jobs:
         working-directory: ${{ runner.temp }}/digests
         run: |
           docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
-            $(printf 'ghcr.io/cany748/awg-easy@sha256:%s ' *)
+            $(printf 'ghcr.io/evoll/awg-easy@sha256:%s ' *)
 
       - name: Inspect image
         run: |
-          docker buildx imagetools inspect ghcr.io/cany748/awg-easy:${{ steps.meta.outputs.version }}
+          docker buildx imagetools inspect ghcr.io/evoll/awg-easy:${{ steps.meta.outputs.version }}
 
   docs:
     name: Build & Deploy Docs
     runs-on: ubuntu-latest
     if: |
-      github.repository_owner == 'wg-easy' &&
+      github.repository_owner == 'evoll' &&
       startsWith(github.ref, 'refs/tags/v')
     permissions:
       contents: write
     needs: docker-merge
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: 3.11.9
           cache: "pip"

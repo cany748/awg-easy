@@ -80,7 +80,7 @@ const dbAdminReset = defineCommand({
 
 const main = defineCommand({
   meta: {
-    name: 'wg-easy',
+    name: 'awg-easy',
     version: packageJson.version,
     description: 'Command Line Interface',
   },

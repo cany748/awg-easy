@@ -14,16 +14,16 @@ docker network create \
 
 <!-- ref: major version -->
 
-To automatically install & run `wg-easy`, simply run:
+To automatically install & run `awg-easy`, simply run:
 
 ```shell
 docker run -d \
   --net wg \
   -e INSECURE=true \
-  --name wg-easy \
+  --name awg-easy \
   --ip6 fdcc:ad94:bacf:61a3::2a \
   --ip 10.42.42.42 \
-  -v ~/.wg-easy:/etc/wireguard \
+  -v ~/.awg-easy:/etc/wireguard \
   -v /lib/modules:/lib/modules:ro \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
@@ -35,7 +35,7 @@ docker run -d \
   --sysctl net.ipv6.conf.all.forwarding=1 \
   --sysctl net.ipv6.conf.default.forwarding=1 \
   --restart unless-stopped \
-  ghcr.io/wg-easy/wg-easy:15
+  ghcr.io/evoll/awg-easy:15
 ```
 
 The Web UI will now be available at <http://0.0.0.0:51821>.

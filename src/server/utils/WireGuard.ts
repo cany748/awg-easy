@@ -93,6 +93,17 @@ class WireGuard {
     return clients;
   }
 
+  async dumpByPublicKey(publicKey: string) {
+    const wgInterface = await Database.interfaces.get();
+
+    const dump = await wg.dump(wgInterface.name);
+    const clientDump = dump.find(
+      ({ publicKey: dumpPublicKey }) => dumpPublicKey === publicKey
+    );
+
+    return clientDump;
+  }
+
   async getAllClients() {
     const wgInterface = await Database.interfaces.get();
     const dbClients = await Database.clients.getAllPublic();
@@ -247,8 +258,8 @@ class WireGuard {
 if (OLD_ENV.PASSWORD || OLD_ENV.PASSWORD_HASH) {
   throw new Error(
     `
-You are using an invalid Configuration for wg-easy
-Please follow the instructions on https://wg-easy.github.io/wg-easy/latest/advanced/migrate/from-14-to-15/ to migrate
+You are using an invalid Configuration for awg-easy
+Please follow the instructions on https://evoll.github.io/awg-easy/latest/advanced/migrate/from-14-to-15/ to migrate
 `
   );
 }

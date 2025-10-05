@@ -44,18 +44,18 @@
     "2faCode": "Code TOTP"
   },
   "setup": {
-    "welcome": "Bienvenue dans votre première installation de wg-easy",
-    "welcomeDesc": "Vous avez trouvé la façon la plus simple d'installer et de gérer WireGuard sur n'importe quel hôte Linux.",
+    "welcome": "Bienvenue dans votre première installation de awg-easy",
+    "welcomeDesc": "Vous avez trouvé la façon la plus simple d'installer et de gérer AmneziaWG sur n'importe quel hôte Linux.",
     "existingSetup": "Avez-vous une installation existante ?",
     "createAdminDesc": "Veuillez d'abord saisir un nom d'utilisateur administrateur et un mot de passe sécurisé. Ces informations seront utilisées pour vous connecter à votre panel d'administration.",
-    "setupConfigDesc": "Veuillez saisir les informations relatives à l'hôte et au port. Ceci sera utilisé pour la configuration du client lors de la mise en place de WireGuard sur les appareils.",
-    "setupMigrationDesc": "Veuillez fournir le fichier de sauvegarde si vous souhaitez migrer vos données de la version précédente de wg-easy vers votre nouvelle installation.",
+    "setupConfigDesc": "Veuillez saisir les informations relatives à l'hôte et au port. Ceci sera utilisé pour la configuration du client lors de la mise en place de AmneziaWG sur les appareils.",
+    "setupMigrationDesc": "Veuillez fournir le fichier de sauvegarde si vous souhaitez migrer vos données de la version précédente de awg-easy vers votre nouvelle installation.",
     "upload": "Téléverser",
     "migration": "Restaurer la sauvegarde:",
     "createAccount": "Créer un compte",
     "successful": "Installation réussie",
     "hostDesc": "Nom d'hôte public auquel les clients se connecteront",
-    "portDesc": "Port UDP public auquel les clients se connecteront et sur lequel WireGuard écoutera"
+    "portDesc": "Port UDP public auquel les clients se connecteront et sur lequel AmneziaWG écoutera"
   },
   "update": {
     "updateAvailable": "Une mise à jour est disponible!",
@@ -113,7 +113,10 @@
     "hooks": "Hooks",
     "hooksDescription": "Les hooks ne fonctionnent qu'avec wg-quick",
     "hooksLeaveEmpty": "Uniquement pour wg-quick. Sinon, laissez-le vide",
-    "dnsDesc": "Serveur DNS que les clients utiliseront (remplace la configuration globale)"
+    "dnsDesc": "Serveur DNS que les clients utiliseront (remplace la configuration globale)",
+    "notConnected": "Client non connecté",
+    "endpoint": "Endpoint",
+    "endpointDesc": "Adresse IP du client à partir duquel la connexion WireGuard est établie"
   },
   "dialog": {
     "change": "Modifier",
@@ -162,11 +165,11 @@
       "cidrSuccess": "CIDR modifié",
       "device": "Périphérique",
       "deviceDesc": "Périphérique Ethernet dans lequel le trafic wireguard sera transmis.",
-      "mtuDesc": "MTU que WireGuard utilisera",
-      "portDesc": "Port UDP sur lequel WireGuard écoutera (vous souhaiterez probablement changer le port de configuration aussi)",
+      "mtuDesc": "MTU que AmneziaWG utilisera",
+      "portDesc": "Port UDP sur lequel AmneziaWG écoutera (vous souhaiterez probablement changer le port de configuration aussi)",
       "changeCidr": "Modifier CIDR",
       "restart": "Redémarrer l'interface",
-      "restartDesc": "Redémarre l'interface WireGuard",
+      "restartDesc": "Redémarre l'interface AmneziaWG",
       "restartWarn": "Êtes-vous sûr de redémarrer l'interface ? Cela déconnectera tous les clients.",
       "restartSuccess": "Interface redémarrée"
     },

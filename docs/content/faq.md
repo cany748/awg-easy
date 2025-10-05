@@ -4,7 +4,7 @@ hide:
     - navigation
 ---
 
-Here are some frequently asked questions or errors about `wg-easy`. If you have a question that is not answered here, please feel free to open a discussion on GitHub.
+Here are some frequently asked questions or errors about `awg-easy`. If you have a question that is not answered here, please feel free to open a discussion on GitHub.
 
 ## Error: WireGuard exited with the error: Cannot find device "wg0"
 

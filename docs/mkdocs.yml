@@ -1,22 +1,22 @@
-site_name: 'wg-easy'
+site_name: 'awg-easy'
 site_description: 'The easiest way to run WireGuard VPN + Web-based Admin UI.'
-site_author: 'WireGuard Easy'
+site_author: 'AmneziaWG Easy'
 copyright: >
     <p>
-    &copy <a href="https://github.com/wg-easy"><em>Wireguard Easy</em></a><br/>
+    &copy <a href="https://github.com/awg-easy"><em>Wireguard Easy</em></a><br/>
     <span>This project is licensed under AGPL-3.0-only.</span><br/>
     <span>This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Jason A. Donenfeld, ZX2C4 or Edge Security</span><br/>
     <span>"WireGuard" and the "WireGuard" logo are registered trademarks of Jason A. Donenfeld</span>
     </p>
 
-repo_url: https://github.com/wg-easy/wg-easy
-repo_name: wg-easy
+repo_url: https://github.com/evoll/awg-easy
+repo_name: awg-easy
 
-edit_uri: 'edit/master/docs/content'
+edit_uri: 'edit/main/docs/content'
 
 docs_dir: 'content/'
 
-site_url: https://wg-easy.github.io/wg-easy
+site_url: https://evoll.github.io/awg-easy
 
 theme:
     name: material

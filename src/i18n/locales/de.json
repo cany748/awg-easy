@@ -44,12 +44,12 @@
     "2faCode": "TOTP-Code"
   },
   "setup": {
-    "welcome": "Willkommen zur Ersteinrichtung von wg-easy",
+    "welcome": "Willkommen zur Ersteinrichtung von awg-easy",
     "welcomeDesc": "Das ist der einfachste Weg, um Wireguard auf jedem Linux-Server zu installieren und zu betreiben.",
     "existingSetup": "Haben Sie eine bestehende Einrichtung?",
     "createAdminDesc": "Bitte geben Sie zuerst einen Admin-Benutzernamen sowie ein starkes, sicheres Passwort ein. Diese Anmeldedaten benötigen Sie, um sich im Admin-Panel anzumelden.",
-    "setupConfigDesc": "Bitte geben Sie die Host- und Portinformationen ein. Diese werden für die Client-Konfiguration verwendet, wenn Sie WireGuard auf Ihren Geräten einrichten.",
-    "setupMigrationDesc": "Bitte halten Sie die Sicherungsdatei bereit, wenn Sie Ihre Daten von Ihrer vorherigen wg-easy Version auf ihre neue Einrichtung migrieren möchten.",
+    "setupConfigDesc": "Bitte geben Sie die Host- und Portinformationen ein. Diese werden für die Client-Konfiguration verwendet, wenn Sie AmneziaWG auf Ihren Geräten einrichten.",
+    "setupMigrationDesc": "Bitte halten Sie die Sicherungsdatei bereit, wenn Sie Ihre Daten von Ihrer vorherigen awg-easy Version auf ihre neue Einrichtung migrieren möchten.",
     "upload": "Hochladen",
     "migration": "Sicherung wiederherstellen:",
     "createAccount": "Konto erstellen",
@@ -111,8 +111,8 @@
     "mtuDesc": "Setzt die maximale Übertragungsgröße (Paketgröße) für den VPN-Tunnel",
     "persistentKeepaliveDesc": "Legt das Intervall (in Sekunden) für Keepalive-Pakete fest. 0 deaktiviert es",
     "hooks": "Hooks",
-    "hooksDescription": "Hooks funktionieren nur mit wg-quick",
-    "hooksLeaveEmpty": "Nur für wg-quick. Sonst leer lassen",
+    "hooksDescription": "Hooks funktionieren nur mit awg-quick",
+    "hooksLeaveEmpty": "Nur für awg-quick. Sonst leer lassen",
     "dnsDesc": "DNS-Server, den die Clients benutzen (überschreibt die globale Konfiguration)"
   },
   "dialog": {
@@ -162,11 +162,11 @@
       "cidrSuccess": "CIDR wurde geändert",
       "device": "Gerät",
       "deviceDesc": "Ethernet-Gerät, durch das der Wireguard-Datenverkehr geleitet werden soll",
-      "mtuDesc": "MTU, den WireGuard benutzen wird",
-      "portDesc": "UDP Port, auf dem WireGuard lauschen wird (Sie wollen wahrscheinlich auch den Config-Port ändern)",
+      "mtuDesc": "MTU, den AmneziaWG benutzen wird",
+      "portDesc": "UDP Port, auf dem AmneziaWG lauschen wird (Sie wollen wahrscheinlich auch den Config-Port ändern)",
       "changeCidr": "CIDR ändern",
       "restart": "Interface neu starten",
-      "restartDesc": "Das WireGuard-Interface neu starten",
+      "restartDesc": "Das AmneziaWG-Interface neu starten",
       "restartWarn": "Sind Sie sicher, dass Sie das Interface neu starten wollen? Dies wird die Verbindungen aller Clients trennen.",
       "restartSuccess": "Interface neu gestartet"
     },

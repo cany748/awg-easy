@@ -14,24 +14,24 @@
 >
 > Инструкция по установке модуля: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
 
-[![Build & Publish latest Image](https://github.com/cany748/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/cany748/awg-easy/actions/workflows/deploy.yml)
-[![Lint](https://github.com/cany748/awg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/cany748/awg-easy/actions/workflows/lint.yml)
-[![GitHub Stars](https://img.shields.io/github/stars/cany748/awg-easy)](https://github.com/cany748/awg-easy/stargazers)
-[![License](https://img.shields.io/github/license/cany748/awg-easy)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/cany748/awg-easy)](https://github.com/cany748/awg-easy/releases/latest)
-[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/cany748/awg-easy/pkgs/container/wg-easy)
+[![Build & Publish latest Image](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml)
+[![Lint](https://github.com/evoll/awg-easy/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/evoll/awg-easy/actions/workflows/lint.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/evoll/awg-easy)](https://github.com/evoll/awg-easy/stargazers)
+[![License](https://img.shields.io/github/license/evoll/awg-easy)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/evoll/awg-easy)](https://github.com/evoll/awg-easy/releases/latest)
+[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/evoll/awg-easy/pkgs/container/awg-easy)
 
 You have found the easiest way to install & manage WireGuard on any Linux host!
 
 <!-- TOOD: update screenshot -->
 
 <p align="center">
-  <img src="./assets/screenshot.png" width="802" alt="wg-easy Screenshot" />
+  <img src="./assets/screenshot.png" width="802" alt="awg-easy Screenshot" />
 </p>
 
 ## Features
 
-- All-in-one: WireGuard + Web UI.
+- All-in-one: AmneziaWG + WireGuard + Web UI.
 - Easy installation, simple to use.
 - List, create, edit, delete, enable & disable clients.
 - Show a client's QR code.
@@ -49,23 +49,23 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 - 2FA support
 
 > [!NOTE]
-> To better manage documentation for this project, it has its own site here: [https://wg-easy.github.io/wg-easy/latest](https://wg-easy.github.io/wg-easy/latest)
+> To better manage documentation for this project, it has its own site here: [https://evoll.github.io/awg-easy/latest](https://evoll.github.io/awg-easy/latest)
 
-- [Getting Started](https://wg-easy.github.io/wg-easy/latest/getting-started/)
-- [Basic Installation](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/)
-- [Caddy](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/caddy/)
-- [Traefik](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/traefik/)
-- [Podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/)
-- [AdGuard Home](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/adguard/)
+- [Getting Started](https://evoll.github.io/awg-easy/latest/getting-started/)
+- [Basic Installation](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/)
+- [Caddy](https://evoll.github.io/awg-easy/latest/examples/tutorials/caddy/)
+- [Traefik](https://evoll.github.io/awg-easy/latest/examples/tutorials/traefik/)
+- [Podman](https://evoll.github.io/awg-easy/latest/examples/tutorials/podman-nft/)
+- [AdGuard Home](https://evoll.github.io/awg-easy/latest/examples/tutorials/adguard/)
 
 > [!NOTE]
-> If you want to migrate from the old version to the new version, you can find the migration guide here: [Migration Guide](https://wg-easy.github.io/wg-easy/latest/advanced/migrate/)
+> If you want to migrate from the old version to the new version, you can find the migration guide here: [Migration Guide](https://evoll.github.io/awg-easy/latest/advanced/migrate/)
 
 ## Installation
 
 This is a quick start guide to get you up and running with WireGuard Easy.
 
-For a more detailed installation guide, please refer to the [Getting Started](https://wg-easy.github.io/wg-easy/latest/getting-started/) page.
+For a more detailed installation guide, please refer to the [Getting Started](https://evoll.github.io/awg-easy/latest/getting-started/) page.
 
 ### 1. Install Docker
 
@@ -82,11 +82,11 @@ And log in again.
 
 The easiest way to run WireGuard Easy is with Docker Compose.
 
-Just follow [these steps](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/) in the detailed documentation.
+Just follow [these steps](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/) in the detailed documentation.
 
-You can also install WireGuard Easy with the [docker run command](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/).
+You can also install WireGuard Easy with the [docker run command](https://evoll.github.io/awg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://evoll.github.io/awg-easy/latest/examples/tutorials/podman-nft/).
 
-Now [setup a reverse proxy](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy) to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide [here](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/reverse-proxyless/) if you decide not to do it.
+Now [setup a reverse proxy](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy) to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide [here](https://evoll.github.io/awg-easy/latest/examples/tutorials/reverse-proxyless/) if you decide not to do it.
 
 ## Donate
 

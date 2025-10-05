@@ -16,7 +16,7 @@ You need to add a scrape config to your Prometheus configuration file. Here is a
 
 ```yaml
 scrape_configs:
-    - job_name: 'wg-easy'
+    - job_name: 'awg-easy'
       scrape_interval: 30s
       metrics_path: /metrics/prometheus
       static_configs:

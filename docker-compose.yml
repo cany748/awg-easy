@@ -2,15 +2,16 @@ volumes:
   etc_wireguard:
 
 services:
-  wg-easy:
-    #environment:
+  awg-easy:
+    environment:
+       - EXPERIMENTAL_AWG=true  # Enable AWG support
     #  Optional:
     #  - PORT=51821
     #  - HOST=0.0.0.0
     #  - INSECURE=false
 
-    image: ghcr.io/cany748/awg-easy:latest
-    container_name: wg-easy
+    image: ghcr.io/evoll/awg-easy:15
+    container_name: awg-easy
     networks:
       wg:
         ipv4_address: 10.42.42.42

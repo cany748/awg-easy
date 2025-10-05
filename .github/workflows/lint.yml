@@ -7,10 +7,37 @@ on:
   pull_request:
 
 jobs:
+  docs:
+    name: Check Docs
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'evoll'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "lts/*"
+          check-latest: true
+          cache: "pnpm"
+
+      - name: Check docs formatting
+        run: |
+          pnpm install
+          pnpm format:check:docs
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'cany748'
+    needs: docs
+    if: github.repository_owner == 'evoll'
 
     strategy:
       fail-fast: false
@@ -20,7 +47,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -28,7 +55,7 @@ jobs:
           run_install: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "lts/*"
           check-latest: true

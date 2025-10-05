@@ -1,6 +1,6 @@
 export default defineNitroPlugin((nitroApp) => {
   console.log(`====================================================`);
-  console.log(`    awg-easy - https://github.com/cany748/awg-easy    `);
+  console.log(`    awg-easy - https://github.com/evoll/awg-easy    `);
   console.log(`====================================================`);
   console.log(`| awg-easy:  ${RELEASE.padEnd(38)} |`);
   console.log(`| Node:     ${process.version.padEnd(38)} |`);

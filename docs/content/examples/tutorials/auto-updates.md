@@ -4,10 +4,10 @@ title: Auto Updates
 
 ## Docker Compose
 
-With Docker Compose `wg-easy` can be updated with a single command:
+With Docker Compose `awg-easy` can be updated with a single command:
 
 ```shell
-cd /etc/docker/containers/wg-easy
+cd /etc/docker/containers/awg-easy
 sudo docker compose up -d --pull always
 ```
 
@@ -54,9 +54,9 @@ sudo docker compose up -d
 ## Docker Run
 
 ```shell
-sudo docker stop wg-easy
-sudo docker rm wg-easy
-sudo docker pull ghcr.io/wg-easy/wg-easy
+sudo docker stop awg-easy
+sudo docker rm awg-easy
+sudo docker pull ghcr.io/evoll/awg-easy
 ```
 
 And then run the `docker run -d \ ...` command from [Docker Run][docker-run] again.
@@ -65,7 +65,7 @@ And then run the `docker run -d \ ...` command from [Docker Run][docker-run] aga
 
 ## Podman
 
-To update `wg-easy` (and every container that has auto updates enabled), you can run the following command:
+To update `awg-easy` (and every container that has auto updates enabled), you can run the following command:
 
 ```shell
 sudo podman auto-update

@@ -7,7 +7,7 @@ title: Caddy
 This guide is opinionated. If you use other conventions or folder layouts, feel free to change the commands and paths.
 ///
 
-We're using [Caddy](https://caddyserver.com/) here as reserve proxy to serve `wg-easy` on [https://wg-easy.example.com](https://wg-easy.example.com) via TLS.
+We're using [Caddy](https://caddyserver.com/) here as reserve proxy to serve `awg-easy` on [https://awg-easy.example.com](https://awg-easy.example.com) via TLS.
 
 ## Create a docker composition for `caddy`
 
@@ -56,10 +56,10 @@ volumes:
         email mail@example.com
 }
 
-wg-easy.example.com {
-        # since the container will share the network with wg-easy
+awg-easy.example.com {
+        # since the container will share the network with awg-easy
         # we can use the proper container name
-        reverse_proxy wg-easy:80
+        reverse_proxy awg-easy:80
         tls internal
 }
 ```
@@ -70,13 +70,13 @@ wg-easy.example.com {
 sudo docker compose up -d
 ```
 
-## Adapt the docker composition of `wg-easy`
+## Adapt the docker composition of `awg-easy`
 
 ```yaml
 services:
-  wg-easy:
+  awg-easy:
     # sync container name and port according to Caddyfile
-    container_name: wg-easy
+    container_name: awg-easy
     environment:
       - PORT=80
     # no need to publish the HTTP server anymore
@@ -99,4 +99,4 @@ networks:
 sudo docker compose up -d
 ```
 
-You can now access `wg-easy` at [https://wg-easy.example.com](https://wg-easy.example.com) and start the setup.
+You can now access `awg-easy` at [https://awg-easy.example.com](https://awg-easy.example.com) and start the setup.

@@ -146,26 +146,26 @@ sudo docker compose up -d
 
 You can no access the Traefik dashboard at `https://traefik.$example.com$` with the credentials you set in `traefik_dynamic.yml`.
 
-## Add Labels to `wg-easy`
+## Add Labels to `awg-easy`
 
-To add labels to your `wg-easy` service, you can add the following to your `docker-compose.yml` file:
+To add labels to your `awg-easy` service, you can add the following to your `docker-compose.yml` file:
 
-File: `/etc/docker/containers/wg-easy/docker-compose.yml`
+File: `/etc/docker/containers/awg-easy/docker-compose.yml`
 
 ```yaml
 services:
-  wg-easy:
+  awg-easy:
     ...
-    container_name: wg-easy
+    container_name: awg-easy
     networks:
       ...
       traefik: {}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.wg-easy.rule=Host(`wg-easy.$example.com$`)"
-      - "traefik.http.routers.wg-easy.entrypoints=websecure"
-      - "traefik.http.routers.wg-easy.service=wg-easy"
-      - "traefik.http.services.wg-easy.loadbalancer.server.port=51821"
+      - "traefik.http.routers.awg-easy.rule=Host(`awg-easy.$example.com$`)"
+      - "traefik.http.routers.awg-easy.entrypoints=websecure"
+      - "traefik.http.routers.awg-easy.service=awg-easy"
+      - "traefik.http.services.awg-easy.loadbalancer.server.port=51821"
       - "traefik.docker.network=traefik"
     ...
 
@@ -175,11 +175,11 @@ networks:
     external: true
 ```
 
-## Restart `wg-easy`
+## Restart `awg-easy`
 
 ```shell
-cd /etc/docker/containers/wg-easy
+cd /etc/docker/containers/awg-easy
 sudo docker compose up -d
 ```
 
-You can now access `wg-easy` at `https://wg-easy.$example.com$` and start the setup.
+You can now access `awg-easy` at `https://awg-easy.$example.com$` and start the setup.

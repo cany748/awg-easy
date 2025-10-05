@@ -4,14 +4,14 @@
       <a
         class="hover:underline"
         target="_blank"
-        href="https://github.com/cany748/awg-easy"
-        >Amnezia WireGuard Easy</a
+        href="https://github.com/evoll/awg-easy"
+        >AmneziaWG Easy</a
       >
       ({{ globalStore.information?.currentRelease }}) © 2021-2025 by
       <a
         class="hover:underline"
         target="_blank"
-        href="https://emile.nl/?ref=wg-easy"
+        href="https://emile.nl/?ref=awg-easy"
         >Emile Nijssen</a
       >
       is licensed under
@@ -24,7 +24,7 @@
       ·
       <a
         class="hover:underline"
-        href="https://github.com/wg-easy/wg-easy#donate"
+        href="https://github.com/evoll/awg-easy#donate"
         target="_blank"
         >{{ $t('layout.donate') }}</a
       >

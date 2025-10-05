@@ -2,7 +2,7 @@
 title: Podman + nftables
 ---
 
-This guide will show you how to run `wg-easy` with rootful Podman and nftables.
+This guide will show you how to run `awg-easy` with rootful Podman and nftables.
 
 ## Requirements
 
@@ -13,22 +13,22 @@ This guide will show you how to run `wg-easy` with rootful Podman and nftables.
 Create a Folder for the configuration files:
 
 ```shell
-sudo mkdir -p /etc/containers/systemd/wg-easy
-sudo mkdir -p /etc/containers/volumes/wg-easy
+sudo mkdir -p /etc/containers/systemd/awg-easy
+sudo mkdir -p /etc/containers/volumes/awg-easy
 ```
 
-Create a file `/etc/containers/systemd/wg-easy/wg-easy.container` with the following content:
+Create a file `/etc/containers/systemd/awg-easy/awg-easy.container` with the following content:
 
 <!-- ref: major version -->
 
 ```ini
 [Container]
-ContainerName=wg-easy
-Image=ghcr.io/wg-easy/wg-easy:15
+ContainerName=awg-easy
+Image=ghcr.io/evoll/awg-easy:15
 AutoUpdate=registry
 
-Volume=/etc/containers/volumes/wg-easy:/etc/wireguard:Z
-Network=wg-easy.network
+Volume=/etc/containers/volumes/awg-easy:/etc/wireguard:Z
+Network=awg-easy.network
 PublishPort=51820:51820/udp
 PublishPort=51821:51821/tcp
 
@@ -50,11 +50,11 @@ Sysctl=net.ipv6.conf.default.forwarding=1
 WantedBy=default.target
 ```
 
-Create a file `/etc/containers/systemd/wg-easy/wg-easy.network` with the following content:
+Create a file `/etc/containers/systemd/awg-easy/awg-easy.network` with the following content:
 
 ```ini
 [Network]
-NetworkName=wg-easy
+NetworkName=awg-easy
 IPv6=true
 ```
 
@@ -67,7 +67,7 @@ wireguard
 nft_masq
 ```
 
-Create a file `/etc/modules-load.d/wg-easy.conf` with the following content:
+Create a file `/etc/modules-load.d/awg-easy.conf` with the following content:
 
 ```txt
 wireguard
@@ -78,12 +78,12 @@ nft_masq
 
 ```shell
 sudo systemctl daemon-reload
-sudo systemctl start wg-easy
+sudo systemctl start awg-easy
 ```
 
 ## Edit Hooks
 
-In the Admin Panel of your WireGuard server, go to the `Hooks` tab and add the following hook:
+In the Admin Panel of your AmneziaWG server, go to the `Hooks` tab and add the following hook:
 
 1. PostUp
 
@@ -104,5 +104,5 @@ If you don't have iptables loaded on your server, you could see many errors in t
 Restart the container to apply the new hooks:
 
 ```shell
-sudo systemctl restart wg-easy
+sudo systemctl restart awg-easy
 ```

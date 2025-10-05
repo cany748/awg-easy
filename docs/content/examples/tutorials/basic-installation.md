@@ -15,24 +15,24 @@ title: Basic Installation
 
 Follow the Docs here: <https://docs.docker.com/engine/install/> and install Docker on your host.
 
-## Install `wg-easy`
+## Install `awg-easy`
 
 1. Create a directory for the configuration files (you can choose any directory you like):
 
     ```shell
-    sudo mkdir -p /etc/docker/containers/wg-easy
+    sudo mkdir -p /etc/docker/containers/awg-easy
     ```
 
 2. Download docker compose file
 
     ```shell
-    sudo curl -o /etc/docker/containers/wg-easy/docker-compose.yml https://raw.githubusercontent.com/wg-easy/wg-easy/master/docker-compose.yml
+    sudo curl -o /etc/docker/containers/awg-easy/docker-compose.yml https://raw.githubusercontent.com/evoll/awg-easy/main/docker-compose.yml
     ```
 
-3. Start `wg-easy`
+3. Start `awg-easy`
 
     ```shell
-     cd /etc/docker/containers/wg-easy
+     cd /etc/docker/containers/awg-easy
      sudo docker compose up -d
     ```
 
@@ -50,12 +50,12 @@ These ports can be changed, so if you change them you have to update your firewa
 - To setup caddy follow the instructions here: [Caddy](./caddy.md)
 - If you do not want to use a reverse proxy follow the instructions here: [No Reverse Proxy](./reverse-proxyless.md)
 
-## Update `wg-easy`
+## Update `awg-easy`
 
-To update `wg-easy` to the latest version, run:
+To update `awg-easy` to the latest version, run:
 
 ```shell
-cd /etc/docker/containers/wg-easy
+cd /etc/docker/containers/awg-easy
 sudo docker compose pull
 sudo docker compose up -d
 ```
