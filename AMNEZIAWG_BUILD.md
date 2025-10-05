@@ -89,9 +89,9 @@ The application checks:
 
 ### Environment Variables
 
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `EXPERIMENTAL_AWG` | `false` | Enable AmneziaWG support |
+|       Variable      |   Default   |          Purpose         |
+|---------------------|-------------|--------------------------|
+| `EXPERIMENTAL_AWG`  | `false`     | Enable AmneziaWG support |
 | `OVERRIDE_AUTO_AWG` | `undefined` | Force `awg` or `wg` mode |
 
 **Example:**
@@ -129,14 +129,14 @@ docker run --rm wg-easy ls -la /usr/bin/ | grep -E 'awg|amnezia'
 
 ## Deployment Scenarios
 
-### Scenario 1: Alpine LTS Host (Kernel Module)
-**Host:** Alpine Linux with kernel 6.12.50-0-lts
+### Scenario 1: Ubuntu 24.x LTS Host (Kernel Module)
+**Host:** Ubuntu 24.x Linux with kernel 6.80.85-0-lts
 **Mode:** Kernel module (best performance)
 
 ```yaml
 services:
-  wg-easy:
-    image: wg-easy
+  awg-easy:
+    image: awg-easy
     environment:
       - EXPERIMENTAL_AWG=true
     cap_add:
@@ -151,8 +151,8 @@ services:
 
 ```yaml
 services:
-  wg-easy:
-    image: wg-easy
+  awg-easy:
+    image: awg-easy
     environment:
       - EXPERIMENTAL_AWG=true
       - OVERRIDE_AUTO_AWG=awg  # Force userspace
@@ -166,8 +166,8 @@ services:
 
 ```yaml
 services:
-  wg-easy:
-    image: wg-easy
+  awg-easy:
+    image: awg-easy
     environment:
       - EXPERIMENTAL_AWG=false
       # OR
@@ -188,7 +188,7 @@ lsmod | grep amneziawg
 ### Check Which Mode is Active
 ```bash
 # Check detection
-docker exec wg-easy awg show
+docker exec awg-easy awg show
 
 # If working, you'll see interface details
 ```
@@ -207,7 +207,7 @@ docker exec wg-easy awg show
 **Symptom:** Module file exists but `modprobe amneziawg` fails
 
 **Causes:**
-- Host kernel version != 6.12.50
+- Host kernel version != 6.80.85
 - Missing `SYS_MODULE` capability
 - Not running with `privileged: true`
 
@@ -227,7 +227,6 @@ environment:
 
 - [AmneziaWG Tools](https://github.com/amnezia-vpn/amneziawg-tools)
 - [AmneziaWG Kernel Module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
-- [Alpine Linux LTS Kernel](https://pkgs.alpinelinux.org/package/edge/main/x86_64/linux-lts)
 
 ## Build Architecture
 
