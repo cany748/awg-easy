@@ -7,12 +7,14 @@
 > The container does not use the Go implementation! It is mandatory to install the AmneziaWG kernel module on the host system.
 >
 > Instructions for installing the module: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+> Instructions for the correct installation of the module on Ubuntu 24.x and higher: [amneziawg-linux-kernel-module for Ubuntu 24.x](https://github.com/evoll/awg-easy/docs/content/guides/ubuntu24.md)
 
 > [!IMPORTANT]
 >
 > Контейнер не использует реализацию на Go! Для работы обязательно требуется установить модуль ядра AmneziaWG на хост-систему.
 >
 > Инструкция по установке модуля: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+> Инструкция по правильной установке модуля на Ubuntu 24.x и выше: [amneziawg-linux-kernel-module for Ubuntu 24.x](https://github.com/evoll/awg-easy/docs/content/guides/ubuntu24ru.md)
 
 [![Build & Publish latest Image](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml)
 [![Lint](https://github.com/evoll/awg-easy/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/evoll/awg-easy/actions/workflows/lint.yml)
