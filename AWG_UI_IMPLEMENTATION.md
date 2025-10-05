@@ -200,8 +200,8 @@ Endpoint = vpn.example.com:51820
 **Docker Compose:**
 ```yaml
 services:
-  wg-easy:
-    image: wg-easy
+  awg-easy:
+    image: awg-easy
     environment:
       - EXPERIMENTAL_AWG=true  # Enable AWG support
     cap_add:
