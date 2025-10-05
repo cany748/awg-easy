@@ -25,7 +25,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/evoll/awg-easy)](https://github.com/evoll/awg-easy/releases/latest)
 [![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/evoll/awg-easy/pkgs/container/awg-easy)
 
-You have found the easiest way to install & manage WireGuard on any Linux host!
+You have found the easiest way to install & manage AmneziaWG on any Linux host!
 
 <!-- TOOD: update screenshot -->
 
