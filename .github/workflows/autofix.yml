@@ -1,5 +1,6 @@
 name: autofix.ci  # needed to securely identify the workflow
 on:
+  workflow_call:
   pull_request:
   push:
     branches: [ "main" ]
@@ -11,12 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
 
-      - run: npm ci
-      - run: npx prettier --write .
-      # or, if you are using yarn:
-      # - run: yarn
-      # - run: yarn prettier --write .
+      # Use uv to ensure we have the same ruff version in CI and locally.
+      - uses: astral-sh/setup-uv@b75a909f75acd358c2196fb9a5f1299a9a8868a4
+        with:
+          version: "0.4.20"
+      # Fix lint errors
+      - run: uv run ruff check --fix-only .
+      # Format code
+      - run: uv run ruff format .
 
       - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
