@@ -1,8 +1,5 @@
 ---
-id: amneziawg-kernel-module
 title: AmneziaWG Kernel Module
-hide:
-    - navigation
 ---
 
 ## Overview

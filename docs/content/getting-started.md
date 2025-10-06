@@ -1,5 +1,4 @@
 ---
-id: getting-started
 title: Getting Started
 hide:
     - navigation
@@ -39,6 +38,7 @@ If you're using podman, make sure to read the related [documentation][docs-podma
 To understand which tags you should use, read this section carefully. [Our CI][github-ci] will automatically build, test and push new images to the following container registry:
 
 1. GitHub Container Registry ([`ghcr.io/evoll/awg-easy`][ghcr-image])
+2. Codeberg Container Registry ([`codeberg.org/evoll/wg-easy`][codeberg-image]) (IPv6 support)
 
 All workflows are using the tagging convention listed below. It is subsequently applied to all images.
 
@@ -48,15 +48,16 @@ All workflows are using the tagging convention listed below. It is subsequently 
 | `latest`      | latest tag                      | `ghcr.io/evoll/awg-easy:latest` or `ghcr.io/evoll/awg-easy` | points to latest release, can include breaking changes                        |
 | `15.0`        | latest patch for that minor tag | `ghcr.io/evoll/awg-easy:15.0`                                | latest patches for specific minor version                                     |
 | `15.0.0`      | specific tag                    | `ghcr.io/evoll/awg-easy:15.0.0`                              | specific release, no updates                                                  |
-| `edge`        | push to `main`                | `ghcr.io/evoll/awg-easy:edge`                                | mostly unstable, gets frequent package and code updates                       |
+| `edge`        | push to `main`              	  | `ghcr.io/evoll/awg-easy:edge`                                | mostly unstable, gets frequent package and code updates                       |
 | `development` | pull requests                   | `ghcr.io/evoll/awg-easy:development`                         | used for development, testing code from PRs                                   |
 
-<!-- ref: major version -->
+<!-- ref: major version (check links too) -->
 
 When publishing a tag we follow the [Semantic Versioning][semver] specification. The `latest` tag is always pointing to the latest stable release. If you want to avoid breaking changes, use the major version tag (e.g. `15`).
 
 [github-ci]: https://github.com/evoll/awg-easy/actions
-[ghcr-image]: https://github.com/evoll/awg-easy/pkgs/container/awg-easy
+[ghcr-image]: https://github.com/evoll/awg-easy/pkgs/container/wg-easy
+[codeberg-image]: https://codeberg.org/evoll/-/packages/container/awg-easy/15
 [semver]: https://semver.org/
 
 ### Follow tutorials
