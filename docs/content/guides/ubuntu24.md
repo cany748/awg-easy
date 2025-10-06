@@ -1,5 +1,7 @@
 ---
 title: Ubuntu 24.x install amneziawg-linux-kernel-module
+hide:
+    - navigation
 ---
 
 

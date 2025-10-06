@@ -1,5 +1,8 @@
 ---
+id: amneziawg-kernel-module
 title: AmneziaWG Kernel Module
+hide:
+    - navigation
 ---
 
 ## Overview
@@ -42,9 +45,9 @@ When `EXPERIMENTAL_AWG=true`, the system will:
 
 ```yaml
 services:
-  wg-easy:
-    image: wg-easy
-    container_name: wg-easy
+  awg-easy:
+    image: awg-easy
+    container_name: awg-easy
     environment:
       - EXPERIMENTAL_AWG=true
     volumes:
@@ -87,7 +90,7 @@ lsmod | grep -E 'amneziawg|wireguard'
 ### Check Application Logs
 
 ```bash
-docker logs wg-easy | grep -i amnezia
+docker logs awg-easy | grep -i amnezia
 ```
 
 ## Fallback Behavior
@@ -124,8 +127,8 @@ privileged: true
 Check if the pre-built module is present:
 
 ```bash
-docker exec wg-easy ls -la /lib/modules/
-docker exec wg-easy cat /etc/amneziawg-kernel-version.txt
+docker exec awg-easy ls -la /lib/modules/
+docker exec awg-easy cat /etc/amneziawg-kernel-version.txt
 ```
 
 ## Security Considerations

@@ -1,7 +1,8 @@
 ---
 title: Ubuntu 24.x install amneziawg-linux-kernel-module
+hide:
+    - navigation
 ---
-
 
 Для работы обязательно требуется установить модуль ядра AmneziaWG на хост-систему.
 
