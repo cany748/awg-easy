@@ -14,7 +14,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'awg-easy'
+    if: github.repository_owner == 'evoll'
     permissions:
       actions: read
       contents: read
