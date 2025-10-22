@@ -9,17 +9,7 @@ type Options = {
   enableIpv6?: boolean;
 };
 
-let wgExecutable: 'awg' | 'wg' = 'wg';
-
-if (WG_ENV.EXPERIMENTAL_AWG) {
-  if (WG_ENV.OVERRIDE_AUTO_AWG !== undefined) {
-    wgExecutable = WG_ENV.OVERRIDE_AUTO_AWG;
-  } else {
-    wgExecutable = await exec('modinfo amneziawg')
-      .then(() => 'awg' as const)
-      .catch(() => 'wg' as const);
-  }
-}
+const wgExecutable = 'awg';
 
 export const wg = {
   generateServerPeer: (
