@@ -7,7 +7,7 @@ title: Caddy
 This guide is opinionated. If you use other conventions or folder layouts, feel free to change the commands and paths.
 ///
 
-We're using [Caddy](https://caddyserver.com/) here as reserve proxy to serve `awg-easy` on [https://awg-easy.example.com](https://awg-easy.example.com) via TLS.
+We're using [Caddy](https://caddyserver.com/) here as reverse proxy to serve `awg-easy` on [https://awg-easy.example.com](https://awg-easy.example.com) via TLS.
 
 ## Create a docker composition for `caddy`
 

@@ -2,6 +2,8 @@
 title: AmneziaWG Kernel Module
 ---
 
+# AmneziaWG Kernel Module
+
 ## Overview
 
 This build includes support for the **AmneziaWG kernel module**, pre-built for Alpine Linux LTS kernel (6.12.50). The kernel module provides better performance than the userspace implementation.
@@ -19,20 +21,19 @@ The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**.
 
 ### Supported Configurations
 
-**✅ Supported:**
-- Alpine Linux with `linux-lts` kernel (6.12.50)
-- Hosts upgraded via the bare-metal install script
-
-**⚠️ Limited Support:**
-- Other kernel versions (will fall back to userspace)
-- Non-Alpine distributions (userspace only)
+| Status | Configuration |
+|--------|---------------|
+| ✅ **Supported** | Alpine Linux with `linux-lts` kernel (6.12.50) |
+| ✅ **Supported** | Hosts upgraded via the bare-metal install script |
+| ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace) |
+| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only) |
 
 ## Automatic Detection
 
 When `EXPERIMENTAL_AWG=true`, the system will:
 
 1. Check if kernel version matches the pre-built module (6.12.50)
-2. If match: Load the AmneziaWG kernel module
+2. If match: Load the AmneziaWG kernel module  
 3. If mismatch: Fall back to standard WireGuard
 4. Respect `OVERRIDE_AUTO_AWG` to force specific implementation
 
@@ -57,7 +58,6 @@ services:
       - "51820:51820/udp"
       - "51821:51821/tcp"
 ```
-
 
 ## Verification
 

@@ -35,7 +35,7 @@ docker run -d \
   --sysctl net.ipv6.conf.all.forwarding=1 \
   --sysctl net.ipv6.conf.default.forwarding=1 \
   --restart unless-stopped \
-  ghcr.io/evoll/awg-easy:15
+  ghcr.io/evoll/awg-easy:latest
 ```
 
 The Web UI will now be available at <http://0.0.0.0:51821>.

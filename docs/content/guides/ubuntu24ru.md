@@ -1,25 +1,30 @@
 ---
-title: Ubuntu 24.x install amneziawg-linux-kernel-module
+title: Ubuntu 24.x Install AmneziaWG Linux Kernel Module
 hide:
     - navigation
 ---
 
-Для работы обязательно требуется установить модуль ядра AmneziaWG на хост-систему.
+# Установка AmneziaWG Kernel Module на Ubuntu 24.x
 
-https://habr.com/ru/companies/amnezia/articles/807539/
+To work, you must install the AmneziaWG kernel module on the host system.
 
-Инструкция по установке модуля: amneziawg-linux-kernel-module https://github.com/amnezia-vpn/amneziawg-linux-kernel-module
+## Links
+
+- [Статья на Habr](https://habr.com/ru/companies/amnezia/articles/807539/)
+- [Репозиторий amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+
+## Инструкция по установке
 
 Откройте Terminal и следуйте инструкциям:
 
-1. Обновите систему до последних версий пакетов, включая последнюю доступную версию ядра, выполнив команды:
+### 1. Обновите систему до последних версий пакетов, включая последнюю доступную версию ядра, выполнив команды:
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get full-upgrade
 
 После обновления ядра требуется перезагрузка.
 
-1.1 Установите Докер если еще не установлен:
+### 1.1 Установите Докер если еще не установлен:
 
 Обновляем индексы пакетов apt
 sudo apt update
@@ -42,7 +47,7 @@ sudo apt install docker-ce docker-cli docker-compose -y
 Убедимся в успешности установки, проверив статус в системе:
 sudo systemctl status docker
 
-2. Убедитесь, что у вас настроены исходные репозитории для APT. Запустите nano /etc/apt/sources.list.d/ubuntu.sources и убедитесь, что есть хотя бы одна строка, начинающаяся с deb-src и не содержащая комментариев. Если нет то после "deb" добавить "deb-src". Примерный вид:
+### 2. Убедитесь, что у вас настроены исходные репозитории для APT. Запустите nano /etc/apt/sources.list.d/ubuntu.sources и убедитесь, что есть хотя бы одна строка, начинающаяся с deb-src и не содержащая комментариев. Если нет то после "deb" добавить "deb-src". Примерный вид:
 
 ## See the sources.list(5) manual page for further settings.
 Types: deb deb-src
@@ -61,10 +66,10 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 После этого повторить п.1
 
-3. Установите предварительные требования — запустите:
+### 3. Установите предварительные требования — запустите:
 sudo apt install -y software-properties-common python3-launchpadlib gnupg2 linux-headers-$(uname -r)
 
-4. По инструкции https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91 нужно скачать, установить и скомпилировать правильные модули:
+### 4. По инструкции https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91 нужно скачать, установить и скомпилировать правильные модули:
 sudo dpkg --configure -a
 sudo apt update -y && sudo apt upgrade -y
 
@@ -96,7 +101,7 @@ needrestart
 
 dpkg -s
 
-5. Развернуть Амнезию на сервере в Docker:
+### 5. Развернуть Амнезию на сервере в Docker:
 
 sudo mkdir -p /etc/docker/containers/awg-easy
 sudo curl -o /etc/docker/containers/awg-easy/docker-compose.yml https://raw.githubusercontent.com/evoll/awg-easy/main/docker-compose.yml

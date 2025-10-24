@@ -38,7 +38,7 @@ If you're using podman, make sure to read the related [documentation][docs-podma
 To understand which tags you should use, read this section carefully. [Our CI][github-ci] will automatically build, test and push new images to the following container registry:
 
 1. GitHub Container Registry ([`ghcr.io/evoll/awg-easy`][ghcr-image])
-2. Codeberg Container Registry ([`codeberg.org/evoll/wg-easy`][codeberg-image]) (IPv6 support)
+2. Codeberg Container Registry ([`codeberg.org/evoll/awg-easy`][codeberg-image]) (IPv6 support)
 
 All workflows are using the tagging convention listed below. It is subsequently applied to all images.
 
@@ -56,7 +56,7 @@ All workflows are using the tagging convention listed below. It is subsequently 
 When publishing a tag we follow the [Semantic Versioning][semver] specification. The `latest` tag is always pointing to the latest stable release. If you want to avoid breaking changes, use the major version tag (e.g. `15`).
 
 [github-ci]: https://github.com/evoll/awg-easy/actions
-[ghcr-image]: https://github.com/evoll/awg-easy/pkgs/container/wg-easy
+[ghcr-image]: https://github.com/evoll/awg-easy/pkgs/container/awg-easy
 [codeberg-image]: https://codeberg.org/evoll/-/packages/container/awg-easy/15
 [semver]: https://semver.org/
 

@@ -17,7 +17,7 @@ This documentation provides you not only with the basic setup and configuration 
 
 ## About
 
-`awg-easy` is the easiest way to run WireGuard VPN + Web-based Admin UI.
+`awg-easy` is the easiest way to run AmneziaWG VPN + Web-based Admin UI.
 
 ## Contents
 

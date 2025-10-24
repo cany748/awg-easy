@@ -36,7 +36,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    needs: docs
+    
     if: github.repository_owner == 'evoll'
 
     strategy:

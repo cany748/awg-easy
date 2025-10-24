@@ -24,7 +24,7 @@ Create a file `/etc/containers/systemd/awg-easy/awg-easy.container` with the fol
 ```ini
 [Container]
 ContainerName=awg-easy
-Image=ghcr.io/evoll/awg-easy:15
+Image=ghcr.io/evoll/awg-easy:latest
 AutoUpdate=registry
 
 Volume=/etc/containers/volumes/awg-easy:/etc/wireguard:Z

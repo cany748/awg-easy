@@ -10,7 +10,7 @@ services:
     #  - HOST=0.0.0.0
     #  - INSECURE=false
 
-    image: ghcr.io/evoll/awg-easy:15
+    image: ghcr.io/evoll/awg-easy:latest
     container_name: awg-easy
     networks:
       wg:
