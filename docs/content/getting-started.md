@@ -42,14 +42,14 @@ To understand which tags you should use, read this section carefully. [Our CI][g
 
 All workflows are using the tagging convention listed below. It is subsequently applied to all images.
 
-| tag           | Type                            | Example                                                       | Description                                                                   |
-| ------------- | ------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `15`          | latest minor for that major tag | `ghcr.io/evoll/awg-easy:15`                                  | latest features for specific major versions, no breaking changes, recommended |
+| tag           | Type                            | Example                                                     | Description                                                                   |
+| ------------- | ------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `15`          | latest minor for that major tag | `ghcr.io/evoll/awg-easy:15`                                 | latest features for specific major versions, no breaking changes, recommended |
 | `latest`      | latest tag                      | `ghcr.io/evoll/awg-easy:latest` or `ghcr.io/evoll/awg-easy` | points to latest release, can include breaking changes                        |
-| `15.0`        | latest patch for that minor tag | `ghcr.io/evoll/awg-easy:15.0`                                | latest patches for specific minor version                                     |
-| `15.0.0`      | specific tag                    | `ghcr.io/evoll/awg-easy:15.0.0`                              | specific release, no updates                                                  |
-| `edge`        | push to `main`              	  | `ghcr.io/evoll/awg-easy:edge`                                | mostly unstable, gets frequent package and code updates                       |
-| `development` | pull requests                   | `ghcr.io/evoll/awg-easy:development`                         | used for development, testing code from PRs                                   |
+| `15.0`        | latest patch for that minor tag | `ghcr.io/evoll/awg-easy:15.0`                               | latest patches for specific minor version                                     |
+| `15.0.0`      | specific tag                    | `ghcr.io/evoll/awg-easy:15.0.0`                             | specific release, no updates                                                  |
+| `edge`        | push to `main`                  | `ghcr.io/evoll/awg-easy:edge`                               | mostly unstable, gets frequent package and code updates                       |
+| `development` | pull requests                   | `ghcr.io/evoll/awg-easy:development`                        | used for development, testing code from PRs                                   |
 
 <!-- ref: major version (check links too) -->
 

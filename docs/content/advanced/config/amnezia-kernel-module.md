@@ -21,19 +21,19 @@ The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**.
 
 ### Supported Configurations
 
-| Status | Configuration |
-|--------|---------------|
-| ✅ **Supported** | Alpine Linux with `linux-lts` kernel (6.12.50) |
-| ✅ **Supported** | Hosts upgraded via the bare-metal install script |
+| Status                 | Configuration                                       |
+| ---------------------- | --------------------------------------------------- |
+| ✅ **Supported**       | Alpine Linux with `linux-lts` kernel (6.12.50)      |
+| ✅ **Supported**       | Hosts upgraded via the bare-metal install script    |
 | ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace) |
-| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only) |
+| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only)           |
 
 ## Automatic Detection
 
 When `EXPERIMENTAL_AWG=true`, the system will:
 
 1. Check if kernel version matches the pre-built module (6.12.50)
-2. If match: Load the AmneziaWG kernel module  
+2. If match: Load the AmneziaWG kernel module
 3. If mismatch: Fall back to standard WireGuard
 4. Respect `OVERRIDE_AUTO_AWG` to force specific implementation
 
@@ -70,6 +70,7 @@ uname -r
 ```
 
 Expected output for kernel module support:
+
 ```
 6.12.50-0-lts
 ```
@@ -140,11 +141,13 @@ Running with `privileged: true` grants the container significant host access. Co
 ## Performance
 
 **Kernel Module Advantages:**
+
 - Lower CPU usage (10-30% improvement)
 - Better throughput on high-speed networks
 - Native kernel integration
 
 **Userspace Advantages:**
+
 - No kernel dependencies
 - Easier deployment
 - Better isolation
@@ -157,9 +160,9 @@ For most users, the **userspace implementation is sufficient**. Use the kernel m
 
 ## Environment Variables
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `EXPERIMENTAL_AWG` | `false` | Enable AmneziaWG support |
+| Variable            | Default     | Description                        |
+| ------------------- | ----------- | ---------------------------------- |
+| `EXPERIMENTAL_AWG`  | `false`     | Enable AmneziaWG support           |
 | `OVERRIDE_AUTO_AWG` | `undefined` | Force `awg` or `wg` implementation |
 
 ## Related Documentation

@@ -18,6 +18,7 @@ To work, you must install the AmneziaWG kernel module on the host system.
 Open the Terminal and follow the instructions:
 
 ### 1. Update the system to the latest package versions, including the latest available kernel version, by running the following commands:
+
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get full-upgrade
@@ -39,18 +40,18 @@ Adding the docker repository
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu noble stable"| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 We are updating the package indexes once again.
-sudo apt update 
+sudo apt update
 
 Installing Docker
 sudo apt docker install docker-ce docker-cli docker-compose -y
 
 Let's make sure the installation is successful by checking the status in the system:
-
 sudo systemctl status docker
 
 ### 2. Make sure that you have configured the source repositories for APT. Run nano /etc/apt/sources.list.d/ubuntu.sources and make sure that there is at least one line starting with deb-src and containing no comments. If not, then add "deb-src" after "deb". Approximate view:
 
 ## See the sources.list(5) manual page for further settings.
+
 Types: deb deb-src
 URIs: http://de.archive.ubuntu.com/ubuntu
 Suites: noble noble-updates noble-backports
@@ -58,7 +59,9 @@ Components: main universe restricted multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ## Ubuntu security updates. Aside from URIs and Suites,
+
 ## this should mirror your choices in the previous section.
+
 Types: deb deb-src
 URIs: http://security.ubuntu.com/ubuntu
 Suites: noble-security
@@ -68,9 +71,11 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 After that, repeat step 1.
 
 ### 3. Set the prerequisites — run:
+
 sudo apt install -y software-properties-common python3-launchpadlib gnupg2 linux-headers-$(uname -r)
 
 ### 4. According to the instructions https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91 you need to download, install and compile the correct modules:
+
 sudo dpkg --configure -a
 sudo apt update -y && sudo apt upgrade -y
 
@@ -87,7 +92,6 @@ sudo apt autoremove
 
 sudo apt-get install dkms
 sudo apt update -y && sudo apt upgrade -y
-
 
 curl -L -O https://ppa.launchpadcontent.net/amnezia/ppa/ubuntu/pool/main/a/amneziawg-linux-kmod/amneziawg-dkms_1.0.0-0~202506030004+b91faba~ubuntu24.10.1_all.deb
 dpkg -i amneziawg-dkms_1.0.0-0~202506030004+b91faba~ubuntu24.10.1_all.deb
@@ -116,7 +120,5 @@ To update awg-easy to the latest version, run:
 cd /etc/docker/containers/awg-easy
 sudo docker compose pull
 sudo docker compose up -d
-
-
 
 The settings can be viewed here: https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/
