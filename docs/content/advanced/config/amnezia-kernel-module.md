@@ -1,6 +1,7 @@
 ---
 title: AmneziaWG Kernel Module
 ---
+
 # AmneziaWG Kernel Module
 
 ## Overview
@@ -11,8 +12,8 @@ This build includes support for the **AmneziaWG kernel module**, pre-built for A
 
 The Docker image includes two AmneziaWG components:
 
-1.  **amneziawg-tools** (`awg`, `awg-quick`) - Command-line tools for managing AmneziaWG
-2.  **amneziawg.ko** - Pre-compiled kernel module for Alpine LTS kernel 6.12.50
+1. **amneziawg-tools** (`awg`, `awg-quick`) - Command-line tools for managing AmneziaWG
+2. **amneziawg.ko** - Pre-compiled kernel module for Alpine LTS kernel 6.12.50
 
 ## Kernel Module Compatibility
 
@@ -20,21 +21,21 @@ The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**.
 
 ### Supported Configurations
 
-| Status                 | Configuration                                       |
-|:----------------------|:---------------------------------------------------|
-| ✅ **Supported**       | Alpine Linux with `linux-lts` kernel (6.12.50)      |
-| ✅ **Supported**       | Hosts upgraded via the bare-metal install script    |
-| ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace) |
-| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only)           |
+| Status                | Configuration                                      |
+| --------------------- | -------------------------------------------------- |
+| ✅ **Supported**      | Alpine Linux with `linux-lts` kernel (6.12.50)     |
+| ✅ **Supported**      | Hosts upgraded via the bare-metal install script   |
+| ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace)|
+| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only)          |
 
 ## Automatic Detection
 
 When `EXPERIMENTAL_AWG=true`, the system will:
 
-1.  Check if kernel version matches the pre-built module (6.12.50)
-2.  If match: Load the AmneziaWG kernel module
-3.  If mismatch: Fall back to AmneziaWG userspace
-4.  Respect `OVERRIDE_AUTO_AWG` to force specific implementation
+1. Check if kernel version matches the pre-built module (6.12.50)
+2. If match: Load the AmneziaWG kernel module
+3. If mismatch: Fall back to AmneziaWG userspace
+4. Respect `OVERRIDE_AUTO_AWG` to force specific implementation
 
 ## Usage
 
@@ -93,9 +94,9 @@ docker logs awg-easy | grep -i amnezia
 
 The system automatically chooses the best available implementation:
 
-1.  **Kernel module** (if host kernel == 6.12.50)
-2.  **amneziawg-go userspace** (all other cases)
-3.  **Standard WireGuard** (if `OVERRIDE_AUTO_AWG=wg`)
+1. **Kernel module** (if host kernel == 6.12.50)
+2. **amneziawg-go userspace** (all other cases)
+3. **Standard WireGuard** (if `OVERRIDE_AUTO_AWG=wg`)
 
 ## Troubleshooting
 
@@ -131,10 +132,10 @@ docker exec awg-easy cat /etc/amneziawg-kernel-version.txt
 
 Running with `privileged: true` grants the container significant host access. Consider:
 
-1.  Use `cap_add` with specific capabilities instead of `privileged` when possible
-2.  Audit the kernel module source before building
-3.  Pin to specific image versions in production
-4.  Monitor container behavior
+1. Use `cap_add` with specific capabilities instead of `privileged` when possible
+2. Audit the kernel module source before building
+3. Pin to specific image versions in production
+4. Monitor container behavior
 
 ## Performance
 
@@ -158,10 +159,10 @@ For most users, the **userspace implementation is sufficient**. Use the kernel m
 
 ## Environment Variables
 
-| Variable            | Default     | Description                        |
-|:--------------------|:------------|:-----------------------------------|
-| `EXPERIMENTAL_AWG`  | `false`     | Enable AmneziaWG support           |
-| `OVERRIDE_AUTO_AWG` | `undefined` | Force `awg` or `wg` implementation |
+| Variable             | Default      | Description                        |
+| -------------------- | ------------ | ---------------------------------- |
+| `EXPERIMENTAL_AWG`   | `false`      | Enable AmneziaWG support           |
+| `OVERRIDE_AUTO_AWG`  | `undefined`  | Force `awg` or `wg` implementation |
 
 ## Related Documentation
 
