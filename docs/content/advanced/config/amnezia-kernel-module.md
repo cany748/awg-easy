@@ -1,4 +1,6 @@
-
+---
+title: AmneziaWG Kernel Module
+---
 # AmneziaWG Kernel Module
 
 ## Overview
