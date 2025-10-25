@@ -45,6 +45,7 @@ Installing Docker
 sudo apt docker install docker-ce docker-cli docker-compose -y
 
 Let's make sure the installation is successful by checking the status in the system:
+
 sudo systemctl status docker
 
 ### 2. Make sure that you have configured the source repositories for APT. Run nano /etc/apt/sources.list.d/ubuntu.sources and make sure that there is at least one line starting with deb-src and containing no comments. If not, then add "deb-src" after "deb". Approximate view:
