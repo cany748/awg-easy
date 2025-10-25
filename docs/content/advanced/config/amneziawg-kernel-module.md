@@ -1,6 +1,6 @@
 ---
-title: AmneziaWG Kernel Module
----
+
+## title: AmneziaWG Kernel Module
 
 # AmneziaWG Kernel Module
 
@@ -21,12 +21,12 @@ The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**.
 
 ### Supported Configurations
 
-| Status                | Configuration                                      |
-| --------------------- | -------------------------------------------------- |
-| ✅ **Supported**      | Alpine Linux with `linux-lts` kernel (6.12.50)     |
-| ✅ **Supported**      | Hosts upgraded via the bare-metal install script   |
-| ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace)|
-| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only)          |
+| Status | Configuration |
+| --- | --- |
+| ✅ **Supported** | Alpine Linux with `linux-lts` kernel (6.12.50) |
+| ✅ **Supported** | Hosts upgraded via the bare-metal install script |
+| ⚠️ **Limited Support** | Other kernel versions (will fall back to userspace) |
+| ⚠️ **Limited Support** | Non-Alpine distributions (userspace only) |
 
 ## Automatic Detection
 
@@ -75,8 +75,9 @@ Expected output for kernel module support:
 
 ### Check Which Implementation is Active
 
+Check if kernel module is loaded
+
 ```sh
-# Check if kernel module is loaded
 lsmod | grep -E 'amneziawg|wireguard'
 ```
 
@@ -153,18 +154,18 @@ Running with `privileged: true` grants the container significant host access. Co
 
 For most users, the **userspace implementation is sufficient**. Use the kernel module if:
 
-- You have high throughput requirements (>500 Mbps)
+- You have high throughput requirements (&gt;500 Mbps)
 - CPU usage is a concern
 - You’re already running privileged containers
 
 ## Environment Variables
 
-| Variable             | Default      | Description                        |
-| -------------------- | ------------ | ---------------------------------- |
-| `EXPERIMENTAL_AWG`   | `false`      | Enable AmneziaWG support           |
-| `OVERRIDE_AUTO_AWG`  | `undefined`  | Force `awg` or `wg` implementation |
+| Variable | Default | Description |
+| --- | --- | --- |
+| `EXPERIMENTAL_AWG` | `false` | Enable AmneziaWG support |
+| `OVERRIDE_AUTO_AWG` | `undefined` | Force `awg` or `wg` implementation |
 
 ## Related Documentation
 
-- [AmneziaWG Configuration](./amnezia.md)
-- [Experimental Features](./experimental-config.md)
+- AmneziaWG Configuration
+- Experimental Features
