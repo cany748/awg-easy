@@ -2,6 +2,14 @@
 
 ---
 
+> [!WARNING]
+>
+> This repo is deprecated, please do not use it anymore.
+>
+> All changes from this fork have been merged into the: [original repository](https://github.com/wg-easy/wg-easy/)
+> 
+> To migrate, you first need to install the latest version of this container, this will update the database and fix migration conflicts. After that, just change the docker image to `ghcr.io/wg-easy/wg-easy` 15.2.0-beta.2 or later
+
 > [!IMPORTANT]
 >
 > The container does not use the Go implementation! It is mandatory to install the AmneziaWG kernel module on the host system.
