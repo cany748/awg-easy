@@ -15,7 +15,7 @@
       </div>
 
       <a
-        :href="`https://github.com/cany748/awg-easy/releases/tag/${globalStore.information.latestRelease.version}`"
+        :href="`https://github.com/wg-easy/wg-easy/releases/tag/${globalStore.information.latestRelease.version}`"
         target="_blank"
         class="font-sm float-right flex-shrink-0 rounded-md border-2 border-red-800 bg-white p-3 font-semibold text-red-800 transition-all hover:border-white hover:bg-red-800 hover:text-white dark:border-red-600 dark:bg-red-100 dark:text-red-600 dark:hover:border-red-600 dark:hover:bg-red-600 dark:hover:text-red-100"
       >

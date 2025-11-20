@@ -1,5 +1,6 @@
 import { drizzle } from 'drizzle-orm/libsql';
 import { migrate as drizzleMigrate } from 'drizzle-orm/libsql/migrator';
+import { sql } from 'drizzle-orm';
 import { createClient } from '@libsql/client';
 import debug from 'debug';
 import { eq } from 'drizzle-orm';
@@ -19,7 +20,40 @@ const client = createClient({ url: 'file:/etc/wireguard/wg-easy.db' });
 const db = drizzle({ client, schema });
 
 export async function connect() {
-  await migrate();
+  let migrations: { created_at: number; hash: string }[];
+  try {
+    migrations = await db.all(sql`SELECT * FROM "__drizzle_migrations"`);
+  } catch {
+    migrations = [];
+  }
+
+  if (
+    !migrations.length ||
+    migrations.at(-1)!.hash !==
+      '28f9a9e188aa0f1a5ec0651ef168b76b53795b2207109685316f909d4fc5634c'
+  ) {
+    await migrate();
+
+    await db.transaction(async (tx) => {
+      await tx.run(sql`
+        DELETE FROM "__drizzle_migrations"
+        WHERE rowid IN (
+          SELECT rowid FROM "__drizzle_migrations"
+          ORDER BY rowid DESC
+          LIMIT 3
+        )
+      `);
+
+      await tx.run(sql`
+        INSERT INTO "__drizzle_migrations" (hash, created_at)
+        VALUES (
+          '28f9a9e188aa0f1a5ec0651ef168b76b53795b2207109685316f909d4fc5634c',
+          1761298328460
+        )
+      `);
+    });
+  }
+
   const dbService = new DBService(db);
 
   if (WG_INITIAL_ENV.ENABLED) {

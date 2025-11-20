@@ -4,8 +4,8 @@
       <a
         class="hover:underline"
         target="_blank"
-        href="https://github.com/cany748/awg-easy"
-        >Amnezia WireGuard Easy</a
+        href="https://github.com/wg-easy/wg-easy"
+        >WireGuard Easy</a
       >
       ({{ globalStore.information?.currentRelease }}) © 2021-2025 by
       <a

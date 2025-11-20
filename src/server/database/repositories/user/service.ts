@@ -161,7 +161,7 @@ export class UserService {
           }
 
           const totp = new TOTP({
-            issuer: 'awg-easy',
+            issuer: 'wg-easy',
             label: txUser.username,
             algorithm: 'SHA1',
             digits: 6,
@@ -200,7 +200,7 @@ export class UserService {
       }
 
       const totp = new TOTP({
-        issuer: 'awg-easy',
+        issuer: 'wg-easy',
         label: txUser.username,
         algorithm: 'SHA1',
         digits: 6,

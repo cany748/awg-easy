@@ -1,12 +1,12 @@
 export default defineNitroPlugin((nitroApp) => {
-  console.log(`====================================================`);
-  console.log(`    awg-easy - https://github.com/cany748/awg-easy    `);
-  console.log(`====================================================`);
-  console.log(`| awg-easy:  ${RELEASE.padEnd(38)} |`);
-  console.log(`| Node:     ${process.version.padEnd(38)} |`);
-  console.log(`| Platform: ${process.platform.padEnd(38)} |`);
-  console.log(`| Arch:     ${process.arch.padEnd(38)} |`);
-  console.log(`====================================================`);
+  console.warn(`==========!!!STOP USING THIS CONTAINER!!!===========`);
+  console.warn(
+    `All changes from this fork have been merged into the original repository.`
+  );
+  console.warn(
+    `The migration will happen automatically, just change the docker image to ghcr.io/wg-easy/wg-easy 15.2.0-beta.2 or later.`
+  );
+  console.warn(`==========!!!STOP USING THIS CONTAINER!!!===========`);
   nitroApp.hooks.hook('close', async () => {
     console.log('Shutting down');
     await WireGuard.Shutdown();

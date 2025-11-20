@@ -19,6 +19,26 @@
       </div>
       <HeaderUpdate class="mt-4" />
     </header>
+    <div
+      v-if="loggedIn"
+      class="mx-auto my-4 max-w-3xl rounded-md bg-red-600 p-4 text-center font-bold text-white"
+    >
+      <div class="text-xl">
+        This container is deprecated, please do not use it anymore.
+      </div>
+      <div class="mt-3">
+        All changes from this fork have been merged into the
+        <a href="https://github.com/wg-easy/wg-easy/" class="underline"
+          >original repository</a
+        >
+        .
+      </div>
+      <div class="mt-3">
+        The migration will happen automatically, just change the docker image to
+        <pre>ghcr.io/wg-easy/wg-easy</pre>
+        <span class="underline">15.2.0-beta.2 or later</span>.
+      </div>
+    </div>
     <slot />
     <UiFooter />
   </div>
